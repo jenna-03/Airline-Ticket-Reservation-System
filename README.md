@@ -20,7 +20,7 @@ This project is an online air ticket reservation system developed as part of the
 
 ### **Backend:**
 - **PHP:** Handles the server-side logic.
-- **MySQL:** Manages the relational database.
+- **Python/MySQL:** Manages the relational database.
 
 ### **Frontend:**
 - **HTML/CSS:** Structures and styles the web pages.
