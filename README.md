@@ -16,14 +16,14 @@ This project is an online air ticket reservation system developed as part of the
 
 ## **Navigation Videos**
 ### **Customer Navigation:**
-Watch our [Customer Portal Navigation Guide](https://youtu.be/yc-0GjTnG6U) to learn how to:
+Watch the [Customer Portal Navigation Guide](https://youtu.be/yc-0GjTnG6U) to learn how to:
 - Register and log into the customer portal
 - Search for flights using different criteria
 - Complete the ticket purchase process
 - Rate past flights and track your spending
 
 ### **Staff Navigation:**
-Watch our [Airline Staff Portal Guide](https://youtu.be/cJh56THjupA) for a walkthrough of:
+Watch the [Airline Staff Portal Guide](https://youtu.be/cJh56THjupA) for a walkthrough of:
 - Accessing the staff management dashboard
 - Adding and updating flight information
 - Managing airplane details and flight statuses
