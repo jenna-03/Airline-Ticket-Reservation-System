@@ -1,66 +1,101 @@
-/* Overall Body Styles */
+
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: #e2e6ea;  /* Lighter background for a cleaner look */
-  color: #343a40;  /* Slightly darker text for better readability */
+  font-family: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
+  background-color: #f5f7fa;  
+  color: #2d3748;  
   margin: 0;
-  padding: 20px;
-  line-height: 1.6;
+  padding: 30px;
+  line-height: 1.7;
 }
 
-/* Heading Style */
+
 h1 {
-  color: #007bff;  /* Bright blue for a modern feel */
+  background: linear-gradient(90deg, #3182ce, #4299e1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;  
   text-align: center;
-  font-size: 30px;  /* Larger font size for emphasis */
-  font-weight: 300;  /* Lighter font weight for an elegant appearance */
-  margin-bottom: 30px;  /* More space below the heading */
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
+  position: relative;
 }
 
-/* List Styles */
+h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #3182ce, #4299e1);
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+
 ul {
   list-style-type: none;
   padding: 0;
-  margin: 0 auto;  /* Center align the list */
+  margin: 20px auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  /* Responsive grid layout */
-  gap: 20px;  /* Spacing between grid items */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
 }
 
 li {
   background-color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* Softer shadow for a more subtle effect */
-  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(49, 130, 206, 0.1);
+  padding: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;  /* Smooth transition for all changes */
-  cursor: pointer;  /* Changes cursor to indicate interactivity */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  border-left: 4px solid transparent;
 }
 
 li:hover {
-  transform: scale(1.05);  /* Scale up on hover */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);  /* Deeper shadow on hover for a 'lifted' effect */
-  background-color: #f8f9fa;  /* Change background on hover */
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px rgba(49, 130, 206, 0.15);
+  border-left: 4px solid #3182ce;
 }
 
-/* Link Style */
+
 a {
-  display: inline-block;  /* Inline-block for better control over styling */
-  margin-top: 40px;  /* Space from the list */
-  padding: 10px 20px;
+  display: block;
+  margin: 50px auto 20px;
+  padding: 14px 28px;
   color: #ffffff;
-  background-color: #007bff;
-  border-radius: 5px;
+  background: linear-gradient(90deg, #3182ce, #4299e1);
+  border-radius: 8px;
   text-decoration: none;
-  transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
-  text-align: center;  /* Center text inside the link */
-  width: 200px;  /* Consistent width */
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 220px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(49, 130, 206, 0.3);
 }
 
 a:hover {
-  background-color: #0056b3;  /* Darken the background on hover */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);  /* Shadow effect for button-like feel */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(49, 130, 206, 0.4);
+}
+
+/* Add responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 20px 15px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  ul {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
 }

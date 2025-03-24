@@ -1,8 +1,8 @@
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(120deg, #f0f7ff 0%, #d5e7fa 100%);
   margin: 0;
-  padding: 20px;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,16 +11,28 @@ body {
 
 .login-container {
   background: white;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Increased shadow depth */
-  width: 350px; /* Increased width for better spacing */
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 86, 179, 0.15);
+  width: 380px;
+  transition: all 0.3s ease;
+}
+
+.login-container:hover {
+  box-shadow: 0 15px 35px rgba(0, 86, 179, 0.2);
+  transform: translateY(-5px);
 }
 
 .login-container h1 {
   text-align: center;
-  color: #0056b3; /* Blue header text */
-  margin-bottom: 20px; /* Added margin for better spacing */
+  color: #2c5282;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 2.2rem;
+  background: linear-gradient(90deg, #3182ce, #4299e1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .login-container form {
@@ -28,31 +40,107 @@ body {
   flex-direction: column;
 }
 
-input[type="email"], input[type="password"], input[type="submit"] {
-  padding: 12px; /* Increased padding for better touch target */
-  margin-top: 10px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
+label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+input[type="email"], input[type="password"] {
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0ff;
+  background-color: #f8faff;
+  transition: all 0.2s;
+  outline: none;
+  font-size: 1rem;
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+  background-color: #fff;
 }
 
 input[type="submit"] {
-  background-color: #007bff; /* Blue button background */
+  padding: 16px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #3182ce, #2b6cb0);
   color: white;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: all 0.3s;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+input[type="submit"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+input[type="submit"]:hover::before {
+  left: 100%;
 }
 
 input[type="submit"]:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 7px 20px rgba(49, 130, 206, 0.4);
+  transform: translateY(-2px);
+}
+
+input[type="submit"]:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(49, 130, 206, 0.4);
+}
+
+.links-section {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.links-section p {
+  margin: 12px 0;
+  color: #555;
 }
 
 a {
-  color: #0066cc;
+  color: #3182ce;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
 }
 
 a:hover {
-  color: #004080; /* Darker blue on hover */
+  color: #2b6cb0;
+  text-decoration: underline;
 }
 
+.divider {
+  margin: 25px 0;
+  border-top: 1px solid #e0e0ff;
+}
+
+/* Password visibility toggle styling if needed */
+.password-toggle {
+  position: relative;
+}
+
+.password-toggle i {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: #999;
+  cursor: pointer;
+}

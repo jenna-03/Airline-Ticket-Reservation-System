@@ -1,48 +1,204 @@
-.flights-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #ffffff; /* White background for outer box */
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow added to outer box */
+/* Import modern font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+body {
+    background-color: #f5f8fa;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
+.page-wrapper {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+
+.flights-container {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(49, 130, 206, 0.1);
+    border-top: 4px solid #3182ce;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+h1 {
+    text-align: center;
+    color: #3182ce;
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h1:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #3182ce, #4299e1);
+    border-radius: 3px;
+}
+
+
 .flight {
-    background-color: #f9f9f9; /* Light gray background for inner box */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    transition: box-shadow 0.3s, transform 0.3s; /* Added transition for smoother interaction */
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-left: 4px solid #4299e1;
+    position: relative;
+    overflow: hidden;
+}
+
+.flight:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(49, 130, 206, 0.03) 0%, rgba(66, 153, 225, 0) 50%);
+    z-index: 0;
 }
 
 .flight:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-    transform: translateY(-5px); /* Lift the box slightly on hover */
+    box-shadow: 0 8px 25px rgba(49, 130, 206, 0.15);
+    transform: translateY(-5px);
 }
 
-/* Stylish text within flight boxes */
+.flight:last-child {
+    margin-bottom: 0;
+}
+
+
 .flight p {
-    margin: 0;
-    color: #333;
+    margin: 0 0 12px 0;
+    color: #4a5568;
     font-size: 16px;
-    line-height: 1.6;
-    font-family: Arial, sans-serif; /* Set font to Arial or sans-serif */
+    position: relative;
+    z-index: 1;
 }
 
 .flight p:first-child {
     font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #2d3748;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 10px;
 }
 
-h1 {
+.flight p:last-child {
+    margin-bottom: 0;
+}
+
+.flight p strong {
+    color: #3182ce;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+
+.flights-container > p {
     text-align: center;
-    color: #007bff; /* Blue header text */
-    font-family: Arial, sans-serif; /* Set font to Arial or sans-serif */
+    font-size: 16px;
+    color: #718096;
+    padding: 20px;
 }
 
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+}
 
 
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #3182ce, #4299e1);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+    position: relative;
+    overflow: hidden;
+}
 
+.back-button:before {
+    content: '←';
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.back-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(49, 130, 206, 0.25);
+}
+
+.back-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);
+}
+
+.back-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    transition: left 0.7s ease;
+}
+
+.back-button:hover::after {
+    left: 100%;
+}
+
+
+@media (max-width: 768px) {
+    .flights-container {
+        padding: 20px;
+        margin: 15px auto;
+    }
+    
+    .flight {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .back-button {
+        width: 100%;
+        max-width: 300px;
+    }
+}

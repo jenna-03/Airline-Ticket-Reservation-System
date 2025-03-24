@@ -1,91 +1,266 @@
+/* Import modern font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #f5f8fa;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  color: #2d3748;
+  line-height: 1.6;
 }
+
+.page-wrapper {
+  padding: 40px 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
 
 h1 {
   text-align: center;
-  color: #007bff; /* Blue header text */
+  color: #3182ce;
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 15px;
 }
+
+h1:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #3182ce, #4299e1);
+  border-radius: 3px;
+}
+
 
 .flights-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(49, 130, 206, 0.1);
+  border-top: 4px solid #3182ce;
 }
 
+
 .flight {
-  background-color: #f9f9f9; /* Light gray background */
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow added */
-  padding: 20px;
-  margin-bottom: 20px;
-  width: 80%;
-  transition: box-shadow 0.3s, transform 0.3s; /* Added transition for smoother interaction */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  margin-bottom: 25px;
+  width: 90%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-left: 4px solid #4299e1;
+  position: relative;
+  overflow: hidden;
+}
+
+.flight:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(49, 130, 206, 0.03) 0%, rgba(66, 153, 225, 0) 50%);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .flight:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-  transform: translateY(-5px); /* Lift the box slightly on hover */
+  box-shadow: 0 8px 25px rgba(49, 130, 206, 0.15);
+  transform: translateY(-5px);
 }
+
 
 .flight p {
   font-size: 16px;
-  line-height: 1.5;
-  color: #333; /* Black text color */
+  line-height: 1.6;
+  color: #4a5568;
+  margin: 0 0 12px 0;
+  position: relative;
+  z-index: 1;
 }
+
+.flight p:first-child {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.flight p strong {
+  color: #3182ce;
+  font-weight: 500;
+}
+
 
 form {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
+  margin-top: 20px;
+  width: 90%;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #4299e1;
+  position: relative;
+  z-index: 1;
 }
 
 form label {
-  font-weight: bold;
-  margin-top: 10px;
+  font-weight: 500;
+  margin-top: 15px;
+  color: #3182ce;
+  font-size: 16px;
 }
 
 input[type="number"],
 textarea {
-  padding: 8px;
-  margin-top: 5px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 5;
+  width: 100%;
 }
 
+input[type="number"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+
 button {
-  background-color: #007bff; /* Blue button background */
+  background: linear-gradient(90deg, #3182ce, #4299e1);
   color: white;
-  padding: 10px 15px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  margin-top: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow added */
-  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: 'Poppins', Arial, sans-serif;
+  box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(49, 130, 206, 0.25);
 }
 
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  transition: left 0.7s ease;
+}
+
+button:hover::after {
+  left: 100%;
+}
+
+
 a {
-  display: inline-block;  /* Change to inline-block for better control */
-  margin-top: 40px;  /* Spacing from the list */
-  padding: 10px 20px;
-  color: #ffffff;
-  background-color: red;
-  border-radius: 5px;
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 24px;
+  color: white;
+  background: linear-gradient(90deg, #3182ce, #4299e1);
+  border-radius: 6px;
   text-decoration: none;
-  transition: background-color 0.3s ease;  /* Smooth background color transition */
-  text-align: center;  /* Ensure text is centered */
-  width: 200px;  /* Fixed width for uniform appearance */
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 200px;
+  font-weight: 500;
+  font-family: 'Poppins', Arial, sans-serif;
+  box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
 a:hover {
-  background-color: darkred;  /* Darken the button on hover */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);  /* Add shadow to button on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(49, 130, 206, 0.25);
+}
+
+a:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  transition: left 0.7s ease;
+}
+
+a:hover::after {
+  left: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .flights-container {
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .flight {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 26px;
+  }
+  
+  form {
+    width: 100%;
+  }
+  
+  a {
+    width: 100%;
+  }
 }

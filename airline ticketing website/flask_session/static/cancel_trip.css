@@ -1,83 +1,257 @@
+/* Import modern font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f5f8fa;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    color: #2d3748;
+    line-height: 1.6;
+    min-height: 100vh;
 }
+
+
+.page-wrapper {
+    padding: 40px 20px;
+}
+
 
 h1 {
     text-align: center;
-    color: #007bff; /* Blue header text */
-    font-family: Arial, sans-serif; /* Set font to Arial or sans-serif */
+    color: #3182ce;
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
 }
+
+h1:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #3182ce, #4299e1);
+    border-radius: 3px;
+}
+
 
 .ticket-container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    background-color: #ffffff; /* White background for outer box */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow added to outer box */
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(49, 130, 206, 0.1);
+    border-top: 4px solid #3182ce;
+    position: relative;
 }
 
+
 .ticket {
-    background-color: #f9f9f9; /* Light gray background for inner box */
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s, transform 0.3s; /* Added transition for smoother interaction */
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-left: 4px solid #4299e1;
+    position: relative;
+    overflow: hidden;
+}
+
+.ticket:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(49, 130, 206, 0.03) 0%, rgba(66, 153, 225, 0) 50%);
+    z-index: 0;
 }
 
 .ticket:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-    transform: translateY(-5px); /* Lift the box slightly on hover */
+    box-shadow: 0 8px 25px rgba(49, 130, 206, 0.15);
+    transform: translateY(-5px);
 }
 
 .ticket:last-child {
-    margin-bottom: 0; /* Remove bottom margin for last ticket */
+    margin-bottom: 0;
 }
 
+
 .ticket p {
-    margin: 5px 0;
-    color: #333; /* Dark text color */
-    font-family: Arial, sans-serif; /* Set font to Arial or sans-serif */
+    margin: 8px 0;
+    color: #4a5568;
+    font-size: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.ticket p:first-child {
+    font-size: 17px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+.ticket .ticket-detail {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0;
+}
+
+.ticket .label {
+    font-weight: 500;
+    color: #3182ce;
 }
 
 form {
-    margin-top: 10px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
 }
 
+
 button {
-    background-color: #007bff; /* Blue button background */
+    background: linear-gradient(90deg, #3182ce, #4299e1);
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 24px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    font-weight: 500;
+    font-family: 'Poppins', Arial, sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+    position: relative;
+    overflow: hidden;
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(49, 130, 206, 0.25);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    transition: left 0.7s ease;
+}
+
+button:hover::after {
+    left: 100%;
 }
 
 
 a {
-    display: inline-block;  /* Change to inline-block for better control */
-    margin-top: 40px;  /* Spacing from the list */
-    padding: 10px 20px;
-    color: #ffffff;
-    background-color: #007bff;
-    border-radius: 5px;
+    display: inline-block;
+    margin-top: 40px;
+    padding: 12px 24px;
+    color: white;
+    background: linear-gradient(90deg, #3182ce, #4299e1);
+    border-radius: 6px;
     text-decoration: none;
-    transition: background-color 0.3s ease;  /* Smooth background color transition */
-    text-align: center;  /* Ensure text is centered */
-    width: 200px;  /* Fixed width for uniform appearance */
-  }
-  
-  a:hover {
-    background-color: #0056b3;  /* Darken the button on hover */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);  /* Add shadow to button on hover */
-  }
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 200px;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(49, 130, 206, 0.25);
+}
+
+a:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    transition: left 0.7s ease;
+}
+
+a:hover::after {
+    left: 100%;
+}
+
+
+.ticket .status {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.ticket .status.open {
+    background-color: #ebf8ff;
+    color: #3182ce;
+    border: 1px solid #bee3f8;
+}
+
+.ticket .status.resolved {
+    background-color: #f0fff4;
+    color: #38a169;
+    border: 1px solid #c6f6d5;
+}
+
+.ticket .status.pending {
+    background-color: #fffaf0;
+    color: #dd6b20;
+    border: 1px solid #feebc8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .ticket-container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .ticket {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

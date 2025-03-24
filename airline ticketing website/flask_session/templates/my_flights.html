@@ -6,20 +6,25 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='my_flights.css') }}">
 </head>
 <body>
-    <h1>My Flights</h1>
-    <div class="flights-container">
-        {% if tickets %}
-            {% for ticket in tickets %}
-            <div class="flight">
-                <p><strong>Ticket ID:</strong> {{ ticket['ticket_id'] }}</p>
-                <p><strong>Flight Number:</strong> {{ ticket['flight_number'] }}</p>
-                <p><strong>Departure Date:</strong> {{ ticket['departure_date']}} at {{ticket['departure_time']}}</p>
-                <p><strong>Airline:</strong> {{ ticket['airline_name'] }}</p>
-            </div>
-            {% endfor %}
-        {% else %}
-            <p>You have no flights booked.</p>
-        {% endif %}
+    <div class="page-wrapper">
+        <h1>My Flights</h1>
+        <div class="flights-container">
+            {% if tickets %}
+                {% for ticket in tickets %}
+                <div class="flight">
+                    <p><strong>Ticket ID:</strong> {{ ticket['ticket_id'] }}</p>
+                    <p><strong>Flight Number:</strong> {{ ticket['flight_number'] }}</p>
+                    <p><strong>Departure Date:</strong> {{ ticket['departure_date']}} at {{ticket['departure_time']}}</p>
+                    <p><strong>Airline:</strong> {{ ticket['airline_name'] }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>You have no flights booked.</p>
+            {% endif %}
+        </div>
+        <div class="button-container">
+            <a href="/home" class="back-button">Back to Home</a>
+        </div>
     </div>
 </body>
 </html>

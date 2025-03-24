@@ -1,31 +1,55 @@
-<!-- templates/home.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Air Ticket Reservation System</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
-
 </head>
 <body>
+    <img src="{{ url_for('static', filename='sky-plane.jpeg') }}" alt="Customer Airplane" class="header-image">
+    
     <header>
         <h1>Welcome to the Air Ticket Reservation System</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="/c_airlines">View Airlines</a></li>
-            <li><a href="/c_airports">View Airports</a></li>
-            <li><a href="/purchase_flight">Purchase Flight</a></li>
-            <li><a href="/my_flights">View My Flights</a></li>
-            <li><a href="/cancel_trip">Cancel Trip</a></li>
-            <li><a href="/ratings_and_comments">Review</a></li>
-            <li><a href="/track_spending">Track My Spending</a></li>
-            <li><a href="/logout">Log Out</a></li>
-
-        </ul>
+    
+    <nav id="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            &#9776; <!-- Hamburger Icon -->
+        </div>
+        <div class="sidebar" id="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul>
+                <li><a href="/c_airlines">View Airlines</a></li>
+                <li><a href="/c_airports">View Airports</a></li>
+                <li><a href="/purchase_flight">Purchase Flight</a></li>
+                <li><a href="/my_flights">View My Flights</a></li>
+                <li><a href="/cancel_trip">Cancel Trip</a></li>
+                <li><a href="/ratings_and_comments">Review</a></li>
+                <li><a href="/track_spending">Track My Spending</a></li>
+            </ul>
+        </div>
+        <div class="logout-link">
+            <a href="/logout">Log Out</a>
+        </div>
     </nav>
+    
+    <main>
+        <!-- Main content area -->
+    </main>
+    
     <footer>
         <p>© 2024 Air Ticket Reservation System. All rights reserved.</p>
     </footer>
+    
+    <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        function closeNav() {
+            document.getElementById('sidebar').classList.remove('active');
+        }
+    </script>
 </body>
 </html>

@@ -1,58 +1,232 @@
+/* Import modern font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  padding: 20px;
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #f9f5f6;
+  padding: 30px;
+  color: #333;
+  line-height: 1.6;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+
 h1, h2 {
-  color: #333;
+  color: #c41e3a;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
 }
+
+h1 {
+  font-size: 28px;
+  text-align: center;
+}
+
+h1:after, h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #c41e3a, #ff6b6b);
+  border-radius: 3px;
+}
+
+h1:after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 
 ul {
   list-style-type: none;
   padding: 0;
+  margin: 25px 0;
 }
 
 li {
-  background-color: #fff;
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: white;
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(196, 30, 58, 0.1);
+  border-left: 4px solid #c41e3a;
+  transition: all 0.3s ease;
 }
+
+li:hover {
+  box-shadow: 0 15px 35px rgba(196, 30, 58, 0.15);
+  transform: translateY(-3px);
+}
+
 
 form {
-  margin-top: 20px;
+  margin-top: 30px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(196, 30, 58, 0.1);
+  border-top: 4px solid #c41e3a;
+  transition: all 0.3s ease;
 }
 
+form:hover {
+  box-shadow: 0 15px 35px rgba(196, 30, 58, 0.15);
+  transform: translateY(-3px);
+}
+
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #c41e3a;
+  box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.2);
+  outline: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+
 button {
-  padding: 10px 20px;
-  background-color: red;
+  padding: 14px 24px;
+  background: linear-gradient(90deg, #c41e3a, #ff6b6b);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-weight: 500;
+  font-size: 15px;
+  box-shadow: 0 4px 6px rgba(196, 30, 58, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', Arial, sans-serif;
 }
 
 button:hover {
-  background-color: darkred;
+  background: linear-gradient(90deg, #b01b33, #ff5252);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(196, 30, 58, 0.25);
 }
 
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(196, 30, 58, 0.2);
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  transition: left 0.7s ease;
+}
+
+button:hover::after {
+  left: 100%;
+}
+
+
 a {
-  display: inline-block;  /* Change to inline-block for better control */
-  margin-top: 40px;  /* Spacing from the list */
-  padding: 10px 20px;
+  display: inline-block;
+  margin-top: 40px;
+  padding: 14px 24px;
   color: #ffffff;
-  background-color: red;
-  border-radius: 5px;
+  background: linear-gradient(90deg, #c41e3a, #ff6b6b);
+  border-radius: 8px;
   text-decoration: none;
-  transition: background-color 0.3s ease;  /* Smooth background color transition */
-  text-align: center;  /* Ensure text is centered */
-  width: 200px;  /* Fixed width for uniform appearance */
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 200px;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(196, 30, 58, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
 a:hover {
-  background-color: darkred;  /* Darken the button on hover */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);  /* Add shadow to button on hover */
+  background: linear-gradient(90deg, #b01b33, #ff5252);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(196, 30, 58, 0.25);
+}
+
+a:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(196, 30, 58, 0.2);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  transition: left 0.7s ease;
+}
+
+a:hover::after {
+  left: 100%;
+}
+
+
+.success-message {
+  background-color: #fdf2f3;
+  border-left: 4px solid #c41e3a;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(196, 30, 58, 0.1);
+}
+
+
+.error-message {
+  background-color: #fff5f5;
+  border-left: 4px solid #c53030;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(197, 48, 48, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+  
+  form, li {
+    padding: 15px;
+  }
+  
+  a {
+    width: 100%;
+    max-width: 300px;
+  }
 }

@@ -1,79 +1,265 @@
-/* Updated CSS */
+/* Import modern font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  padding: 20px;
-  color: #333;
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #fff5f5;
+  background-image: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+  padding: 30px;
+  color: #2d3748;
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
 }
+
 
 h1 {
   text-align: center;
+  color: #c41e3a;
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 15px;
 }
+
+h1:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #c41e3a, #ff6b6b);
+  border-radius: 3px;
+}
+
 
 .ratings-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+
 .flight {
-  background: linear-gradient(180deg, #ffffff, #f0f0f0); /* Gradient background */
-  border: 2px solid #cc0000; /* Darker red border */
-  padding: 20px; /* Increased padding */
-  margin-bottom: 20px;
-  width: 60%;
-  border-radius: 10px; /* Increased border radius for softer edges */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s, transform 0.3s;
+  background: white;
+  border: none;
+  padding: 30px;
+  margin-bottom: 30px;
+  width: 70%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(196, 30, 58, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  border-left: 5px solid #c41e3a;
+  overflow: hidden;
 }
 
 .flight:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-  transform: translateY(-5px); /* Lift the box slightly on hover */
+  box-shadow: 0 15px 35px rgba(196, 30, 58, 0.15);
+  transform: translateY(-5px);
 }
 
+.flight:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(196, 30, 58, 0.03) 0%, rgba(255, 107, 107, 0) 50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+.flight h2 {
+  color: #c41e3a;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 22px;
+  border-bottom: 1px solid #f8d7da;
+  padding-bottom: 10px;
+}
+
+
 details {
-  margin-top: 10px;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 5px;
+  position: relative;
+  z-index: 1;
 }
 
 summary {
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
+  color: #c41e3a;
+  padding: 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  outline: none;
+  position: relative;
+  list-style: none;
 }
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  color: #c41e3a;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+details[open] summary:after {
+  transform: rotate(45deg);
+}
+
+summary:hover {
+  background-color: #fdf2f3;
+}
+
 
 ul {
   list-style: none;
   padding-left: 0;
+  margin-top: 15px;
 }
 
 li {
-  padding: 12px; /* Increased padding for better spacing */
-  border-bottom: 1px solid #eee;
+  padding: 15px;
+  border-bottom: 1px solid #f8d7da;
+  transition: background-color 0.3s ease;
+  border-radius: 6px;
+}
+
+li:hover {
+  background-color: #fdf2f3;
 }
 
 li:last-child {
   border-bottom: none;
 }
 
+
 strong {
-  color: red;
+  color: #c41e3a;
+  font-weight: 600;
 }
 
+
+.rating {
+  display: flex;
+  margin-top: 10px;
+}
+
+.star {
+  color: #c41e3a;
+  font-size: 24px;
+  margin-right: 2px;
+}
+
+.star-empty {
+  color: #e2e8f0;
+}
+
+
 a {
-  display: inline-block;  /* Change to inline-block for better control */
-  margin-top: 40px;  /* Spacing from the list */
-  padding: 10px 20px;
-  color: #ffffff;
-  background-color: red;
-  border-radius: 5px;
+  display: inline-block;
+  margin-top: 40px;
+  padding: 14px 28px;
+  color: white;
+  background: linear-gradient(90deg, #c41e3a, #ff6b6b);
+  border-radius: 8px;
   text-decoration: none;
-  transition: background-color 0.3s ease;  /* Smooth background color transition */
-  text-align: center;  /* Ensure text is centered */
-  width: 200px;  /* Fixed width for uniform appearance */
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 200px;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(196, 30, 58, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
 a:hover {
-  background-color: darkred;  /* Darken the button on hover */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);  /* Add shadow to button on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(196, 30, 58, 0.25);
+  background: linear-gradient(90deg, #b01b33, #ff5252);
+}
+
+a:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(196, 30, 58, 0.2);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  transition: left 0.7s ease;
+}
+
+a:hover::after {
+  left: 100%;
+}
+
+
+.flight-meta {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  color: #718096;
+  font-size: 15px;
+}
+
+.flight-date, .flight-airline {
+  display: flex;
+  align-items: center;
+}
+
+.flight-date:before, .flight-airline:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+  
+  .flight {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 26px;
+  }
+  
+  a {
+    width: 100%;
+    max-width: 300px;
+  }
 }
