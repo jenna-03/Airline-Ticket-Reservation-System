@@ -1,9 +1,7 @@
 # **Airline Ticket Reservation System**
-
 This project is an online air ticket reservation system developed as part of the NYU Tandon School of Engineering's Intro to Databases (CS-UY 3083) course. The system allows customers to search for flights, purchase tickets, and view flight statuses, while airline staff can manage flights, airplanes, and view customer data.
 
 ## **Features**
-
 ### **Customer Features:**
 - **Search for Flights:** Search for one-way or round-trip flights based on source/destination cities or airports.
 - **Purchase Tickets:** Buy flight tickets and view both future and past flights.
@@ -16,8 +14,22 @@ This project is an online air ticket reservation system developed as part of the
 - **Customer Details:** Access customer information and flight ratings.
 - **Reports:** Generate reports on frequent customers and revenue.
 
-## **Technologies Used**
+## **Navigation Videos**
+### **Customer Navigation:**
+Watch our [Customer Portal Navigation Guide](https://youtu.be/yc-0GjTnG6U) to learn how to:
+- Register and log into the customer portal
+- Search for flights using different criteria
+- Complete the ticket purchase process
+- Rate past flights and track your spending
 
+### **Staff Navigation:**
+Watch our [Airline Staff Portal Guide](https://youtu.be/cJh56THjupA) for a walkthrough of:
+- Accessing the staff management dashboard
+- Adding and updating flight information
+- Managing airplane details and flight statuses
+- Generating customer and revenue reports
+
+## **Technologies Used**
 ### **Backend:**
 - **PHP:** Handles the server-side logic.
 - **Python/MySQL:** Manages the relational database.
@@ -30,28 +42,22 @@ This project is an online air ticket reservation system developed as part of the
 The database schema was designed and normalized based on an Entity-Relationship (ER) diagram to support complex queries and ensure data integrity. It includes tables for customers, airline staff, flights, tickets, airplanes, and airports.
 
 ## **Installation**
-
 1. **Clone the repository:**
     ```bash
     git clone https://github.com/your-repo-link
     ```
-
 2. **Navigate to the project directory:**
     ```bash
     cd your-repo-link
     ```
-
 3. **Set up the database:**
     - Import the SQL schema from `database/schema.sql` into your MySQL database.
-
 4. **Configure the database connection:**
     - Update the database configuration in `config/database.php` with your MySQL credentials.
-
 5. **Start the server:**
     - Use a local server like XAMPP or WAMP to run the PHP application.
 
 ## **Usage**
-
 ### **Customer Operations:**
 - **Register and Log In:** Register and log in as a customer.
 - **Search for Flights:** Search for flights and purchase tickets.
@@ -63,11 +69,9 @@ The database schema was designed and normalized based on an Entity-Relationship 
 - **Update Flight Statuses:** View and update flight statuses.
 
 ## **Security**
-
 - **User Authentication:** Implemented using PHP sessions to ensure secure login and session management.
 - **Prepared Statements:** Used in PHP to prevent SQL injection attacks.
 - **HTTPS:** Ensures encrypted data transmission.
 
 ## **Contributing**
-
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
